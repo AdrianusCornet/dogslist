@@ -4,7 +4,13 @@ export default class Dogslist extends Component {
   state = {
     dogBreeds: null
   }
-  
+
+  // life time
+  componentDidMount() {
+    
+  }
+
+  // render
   renderDogBreads() {
     if (this.state.dogBreeds === null) {
       return 'loading...'
