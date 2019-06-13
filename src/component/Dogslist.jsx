@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 
 export default class Dogslist extends Component {
   state = {
-    dogBreeds: 'potato',
+    dogBreeds: null
   }
   
   renderDogBreads() {
-    return this.state.dogBreeds === null && 'loading...'
+    if (this.state.dogBreeds === null) {
+      return 'loading...'
+    }
+    return this.state.dogBreeds
   }
   render() {
     return (
       <div className='dogs-list'>
         <h1>Dogs List</h1>
 
-        { this.state.dogBreeds === null && 'loading...' }
+        { this.renderDogBreads() }
       </div>
     )
   }
