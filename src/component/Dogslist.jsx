@@ -7,7 +7,10 @@ export default class Dogslist extends Component {
 
   // life time
   componentDidMount() {
-    
+    fetch('https://dog.ceo/api/breeds/list/all')
+      .then(response => response.json())
+      .then(myJson => console.log(myJson.message))
+      .catch(error => console.error(error))
   }
 
   // render
