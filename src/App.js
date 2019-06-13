@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import DogsList from './component/DogsList'
+import DogsListContener from './component/DogsListContener';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        < DogsList />
+        < DogsListContener />
       </div>
     );
   }
