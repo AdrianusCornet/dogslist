@@ -9,8 +9,9 @@ export default class Dogslist extends Component {
   componentDidMount() {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())
-      .then(myJson => console.log(myJson.message))
-      .catch(error => console.error(error))
+      .then(myJson => myJson.message)
+      .then(console.log)
+      .catch(console.error)
   }
 
   // render
