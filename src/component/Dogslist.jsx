@@ -23,14 +23,19 @@ export default class Dogslist extends Component {
     if (this.state.dogBreeds === null) {
       return 'loading...'
     }
-    return this.state.dogBreeds
+    return (
+      this.state.dogBreeds
+        .map(breed => <li key={breed}>{breed}</li>)
+    )
   }
   render() {
     return (
       <div className='dogs-list'>
         <h1>Dogs List</h1>
-
-        { this.renderDogBreeds() }
+        <br />
+        <ul>
+          {this.renderDogBreeds()}
+        </ul>
       </div>
     )
   }
