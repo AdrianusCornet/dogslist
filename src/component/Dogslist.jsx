@@ -4,18 +4,22 @@ export default class Dogslist extends Component {
   state = {
     dogBreeds: null
   }
+  // state handelsers
+  updateBreeds(breeds) {
+    this.setState({ dogBreeds: breeds })
+  }
 
   // life time
   componentDidMount() {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())
       .then(myJson => Object.keys(myJson.message))
-      .then(breads => console.log(breads))
+      .then(breeds => this.updateBreeds(breeds))
       .catch(console.error)
   }
 
   // render
-  renderDogBreads() {
+  renderDogBreeds() {
     if (this.state.dogBreeds === null) {
       return 'loading...'
     }
@@ -26,7 +30,7 @@ export default class Dogslist extends Component {
       <div className='dogs-list'>
         <h1>Dogs List</h1>
 
-        { this.renderDogBreads() }
+        { this.renderDogBreeds() }
       </div>
     )
   }
